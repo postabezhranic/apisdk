@@ -13,7 +13,7 @@ class Pbh {
 	/** @var Request */
 	private $request;
 	
-	const URL_SEND_PACKAGES = 'https://www.postabezhranic.cz/Apisdk/send-packages';
+	const URL_SEND_PACKAGES = 'https://www.postabezhranic.cz/api/send-packages';
 	//const URL_SEND_PACKAGES = 'localhost/pbh/Apisdk/send-packages'; //testovací
 	
 	public function __construct($login, $ApisdkKey) {
