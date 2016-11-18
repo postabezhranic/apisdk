@@ -3,10 +3,10 @@
 use postabezhranic\apisdk\Pbh; //zadání namespace Pbh
 
 //pokud nepoužíváte composer je potřeba takto nalinkovat závislosti
-require __DIR__ . '/../src/postabezhranic/apisdk/Request.php';
-require __DIR__ . '/../src/postabezhranic/apisdk/Pbh.php';
-require __DIR__ . '/../src/postabezhranic/apisdk/Item.php';
-require __DIR__ . '/../src/postabezhranic/apisdk/XmlBuilder.php';
+require __DIR__ . '/../src/Request.php';
+require __DIR__ . '/../src/Pbh.php';
+require __DIR__ . '/../src/Item.php';
+require __DIR__ . '/../src/XmlBuilder.php';
 
 $pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
 

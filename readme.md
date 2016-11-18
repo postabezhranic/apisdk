@@ -14,10 +14,10 @@ $ composer require postabezhranic/apisdk
 
 Pokud nepoužíváte composer, stáhněte si data do svého projektu a použijte:
 ```php
-require $path . '/apisdk/src/postabezhranic/apisdk/Request.php';
-require $path . '/apisdk/src/postabezhranic/apisdk/Pbh.php';
-require $path . '/apisdk/src/postabezhranic/apisdk/Item.php';
-require $path . '/apisdk/src/postabezhranic/apisdk/XmlBuilder.php';
+require $path . '/apisdk/src/Request.php';
+require $path . '/apisdk/src/Pbh.php';
+require $path . '/apisdk/src/Item.php';
+require $path . '/apisdk/src/XmlBuilder.php';
 ```
 
 Kde ***$path*** je samozřejmě cesta ke knihovně.
