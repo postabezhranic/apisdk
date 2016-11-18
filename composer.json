@@ -1,0 +1,21 @@
+{
+    "name": "Postabezhranic/ApiSdk",
+    "description": "api sdk for postabezhranic",
+    "type": "library",
+    "authors": [
+        {
+            "name": "Frogman s.r.o.",
+            "email": "info@postabezhranic.cz"
+        },
+        {
+            "name": "Jan Matoušek",
+            "email": "matousek.vr@gmail.com"
+        }
+    ],
+    "require": {
+        "php": ">=5.1"
+    },
+    "autoload": {
+        "psr-4": { "Postabezhranic\\ApiSdk\\": "src/" }
+    }
+}
