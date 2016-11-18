@@ -1,6 +1,6 @@
 <?php
 
-namespace Postabezhranic\ApiSdk;
+namespace Postabezhranic\Apisdk;
 
 
 /**
@@ -13,14 +13,14 @@ class Request
 	private $login;
 	
 	/** @var string */
-	private $ApiSdkkey;
+	private $Apisdkkey;
 	
 	const CERTIFICATE_PATH = '/ca-bundle.crt';
 	
 	
-	public function __construct($login, $ApiSdkkey){
+	public function __construct($login, $Apisdkkey){
 		$this->login = $login;
-		$this->ApiSdkkey = $ApiSdkkey;
+		$this->Apisdkkey = $Apisdkkey;
 	}
 	
 	
@@ -34,7 +34,7 @@ class Request
 		curl_setopt($ch, CURLOPT_POST, 1); 
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
 		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE); 
-		curl_setopt($ch, CURLOPT_USERPWD, "$this->login:$this->ApiSdkkey");
+		curl_setopt($ch, CURLOPT_USERPWD, "$this->login:$this->Apisdkkey");
 		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, TRUE);
 		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
 		curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . self::CERTIFICATE_PATH);

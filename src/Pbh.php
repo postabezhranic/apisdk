@@ -1,6 +1,6 @@
 <?php
 
-namespace Postabezhranic\ApiSdk;
+namespace Postabezhranic\Apisdk;
 
 /**
  * @author Jan Matoušek
@@ -13,11 +13,11 @@ class Pbh {
 	/** @var Request */
 	private $request;
 	
-	const URL_SEND_PACKAGES = 'https://www.postabezhranic.cz/ApiSdk/send-packages';
-	//const URL_SEND_PACKAGES = 'localhost/pbh/ApiSdk/send-packages'; //testovací
+	const URL_SEND_PACKAGES = 'https://www.postabezhranic.cz/Apisdk/send-packages';
+	//const URL_SEND_PACKAGES = 'localhost/pbh/Apisdk/send-packages'; //testovací
 	
-	public function __construct($login, $ApiSdkKey) {
-		$this->request = new Request($login, $ApiSdkKey);
+	public function __construct($login, $ApisdkKey) {
+		$this->request = new Request($login, $ApisdkKey);
 	}
 
 	

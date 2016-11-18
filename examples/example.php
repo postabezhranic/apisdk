@@ -1,6 +1,6 @@
 <?php
 
-use postabezhranic\apisdk\Pbh; //zadání namespace Pbh
+use postabezhranic\Apisdk\Pbh; //zadání namespace Pbh
 
 //pokud nepoužíváte composer je potřeba takto nalinkovat závislosti
 require __DIR__ . '/../src/Request.php';

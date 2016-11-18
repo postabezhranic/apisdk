@@ -1,4 +1,4 @@
-#apisdk
+#Apisdk
 
 API SDK for postabezhranic
 
@@ -9,22 +9,22 @@ Instalace
 Nejsnažší instalace je pomocí composeru  [Composer](http://getcomposer.org/):
 
 ```sh
-$ composer require postabezhranic/apisdk
+$ composer require postabezhranic/Apisdk
 ```
 
 Pokud nepoužíváte composer, stáhněte si data do svého projektu a použijte:
 ```php
-require $path . '/apisdk/src/Request.php';
-require $path . '/apisdk/src/Pbh.php';
-require $path . '/apisdk/src/Item.php';
-require $path . '/apisdk/src/XmlBuilder.php';
+require $path . '/Apisdk/src/Request.php';
+require $path . '/Apisdk/src/Pbh.php';
+require $path . '/Apisdk/src/Item.php';
+require $path . '/Apisdk/src/XmlBuilder.php';
 ```
 
 Kde ***$path*** je samozřejmě cesta ke knihovně.
 
 Použití
 ------------
-Použití je jednoduché. Nejprve je potřeba inicializovat třídu \postabezhranic\apisdk\Pbh a předat ji ***username*** a ***apikey***
+Použití je jednoduché. Nejprve je potřeba inicializovat třídu \postabezhranic\Apisdk\Pbh a předat ji ***username*** a ***apikey***
 ```php
 $pbh = new \postabezhranic\api\Pbh('username', 'apikey');
 ```

@@ -1,5 +1,5 @@
 {
-    "name": "Postabezhranic/ApiSdk",
+    "name": "Postabezhranic/Apisdk",
     "description": "api sdk for postabezhranic",
     "type": "library",
     "authors": [
@@ -16,6 +16,6 @@
         "php": ">=5.1"
     },
     "autoload": {
-        "psr-4": { "Postabezhranic\\ApiSdk\\": "src/" }
+        "psr-4": { "Postabezhranic\\Apisdk\\": "src/" }
     }
 }

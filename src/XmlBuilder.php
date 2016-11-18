@@ -1,6 +1,6 @@
 <?php
 
-namespace Postabezhranic\ApiSdk;
+namespace Postabezhranic\Apisdk;
 
 use DOMDocument;
 
