@@ -1,5 +1,7 @@
 #Apisdk
 
+[![Latest stable](https://img.shields.io/packagist/v/postabezhranic/apisdk.svg)](https://packagist.org/packages/postabezhranic/apisdk)
+
 API SDK for postabezhranic
 
 
