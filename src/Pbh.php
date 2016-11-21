@@ -16,8 +16,13 @@ class Pbh {
 	const URL_SEND_PACKAGES = 'https://www.postabezhranic.cz/api/send-packages';
 	//const URL_SEND_PACKAGES = 'localhost/pbh/Apisdk/send-packages'; //testovací
 	
-	public function __construct($login, $ApisdkKey) {
-		$this->request = new Request($login, $ApisdkKey);
+	/**
+	 * 
+	 * @param int $login - id uživatele
+	 * @param string $apisdkKey - apikey (Pokud nemáte API klíč, můžete si ho vygenerovat v klientském účtu v sekci Nastavení.)
+	 */
+	public function __construct($login, $apiKey) {
+		$this->request = new Request($login, $apiKey);
 	}
 
 	
