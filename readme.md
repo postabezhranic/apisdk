@@ -6,7 +6,7 @@ API SDK for postabezhranic
 Instalace
 ------------
 
-Nejsnažší instalace je pomocí composeru  [Composer](http://getcomposer.org/):
+Nejsnazší instalace je pomocí composeru  [Composer](http://getcomposer.org/):
 
 ```sh
 $ composer require postabezhranic/Apisdk
@@ -20,7 +20,7 @@ require $path . '/Apisdk/src/Item.php';
 require $path . '/Apisdk/src/XmlBuilder.php';
 ```
 
-Kde ***$path*** je samozřejmě cesta ke knihovně.
+Kde ***$path*** je cesta ke knihovně.
 
 Použití
 ------------
@@ -29,9 +29,9 @@ Použití je jednoduché. Nejprve je potřeba inicializovat třídu \postabezhra
 $pbh = new \postabezhranic\api\Pbh('username', 'apikey');
 ```
 
-Potom můžeme přidávat balíky jednoduše pomocí addItem. 
-Jaké klíče použít zjistíte ve třídě Item, nebo pomocí naší interní dokumentace.
-Interní dokumentaci dostanete emailem po aktivaci vašeho účtu. V dokumnetaci se také dozvíte jaké přepravce volit atd...
+Potom můžeme přidávat zásilky pomocí addItem. 
+Jaké klíče použít zjistíte ve třídě Item nebo pomocí naší interní dokumentace.
+Interní dokumentaci obdržíte na žádost emailem po vytvoření klientského účtu. V dokumentaci se také dozvíte jaké přepravce volit, atd.
 
 ```php
 $pbh->addItem([
@@ -56,12 +56,12 @@ $pbh->addItem(array(
 ));
 ```
 
-balíků je možné přidat až 2000
+Zásilek je možné přidat až 2000
 
-Pokud máme balíky přidané, je ještě potřeba je poslat k nám na server, to se udělá pomocí .
+Jakmile jsou zásilky přidané, je nutné je poslat na náš server:
 
 ```php
 $result = $pbh->sendItems();
 ```
 
-V ***$result*** obdržíme odpověď ve formě pole. Pokud nastane chyba, tak bude zde i informace o chybě. Více se dozvíte zase v interní dokumetaci.
+V ***$result*** obdržíme odpověď ve formě pole. V případě, že nastane chyba, tak v odpovědi obdržíte bližší informace o chybě. Více informací se dozvíte v naší interní dokumetaci.
