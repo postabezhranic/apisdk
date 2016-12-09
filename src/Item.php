@@ -20,6 +20,9 @@ class Item
 	/** @var string|bool */
 	private $ulice;
 	
+	/** @var string|bool */
+	private $email;
+	
 	/** @var string|bool @required u rumunska nemusí být*/
 	private $psc;
 	
@@ -71,6 +74,7 @@ class Item
 		$this->spolecnost = isset($itemData['spolecnost']) ? $itemData['spolecnost'] : FALSE;
 		$this->jmeno = isset($itemData['jmeno']) ? $itemData['jmeno'] : FALSE;
 		$this->ulice = isset($itemData['ulice']) ? $itemData['ulice'] : FALSE;
+		$this->email = isset($itemData['email']) ? $itemData['email'] : FALSE;
 		$this->psc = isset($itemData['psc']) ? $itemData['psc'] : FALSE;
 		$this->mesto = isset($itemData['mesto']) ? $itemData['mesto'] : FALSE;
 		$this->dobirka = isset($itemData['dobirka']) ? $itemData['dobirka'] : FALSE;
