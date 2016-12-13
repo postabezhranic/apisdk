@@ -39,7 +39,8 @@ class XmlBuilder {
 				if(!$data || !$key){
 					continue;
 				}
-				$xmlItem->appendChild($this->xml->createElement($key, $data));
+				$element = $xmlItem->appendChild($this->xml->createElement($key));
+				$element->appendChild($this->xml->createCDATASection($data));
 			}
 		}
 		
