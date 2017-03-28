@@ -29,7 +29,7 @@ class Request
 	 * @param string $url
 	 * @param string $data xml
 	 */
-	public function sendRequest($url, $data){
+	public function sendRequest($url, $data = ''){
 		$ch = curl_init($url); 
 		curl_setopt($ch, CURLOPT_POST, 1); 
 		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);

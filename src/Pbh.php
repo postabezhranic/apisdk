@@ -14,7 +14,10 @@ class Pbh {
 	private $request;
 	
 	const URL_SEND_PACKAGES = 'https://www.postabezhranic.cz/api/send-packages';
-	//const URL_SEND_PACKAGES = 'localhost/pbh/Apisdk/send-packages'; //testovací
+	//const URL_SEND_PACKAGES = 'localhost/pbh/api/send-packages'; //testovací
+	
+	//const URL_GET_PACKAGE_INFO = 'https://www.postabezhranic.cz/api/get-package-info?id={id}';
+	const URL_GET_PACKAGE_INFO = 'localhost/pbh/api/get-package-info?id={id}'; //testovací
 	
 	/**
 	 * 
@@ -64,6 +67,17 @@ class Pbh {
 	}
 	
 	
+	public function getPackageInfo($packageId){
+		try{
+			$result = $this->request->sendRequest(str_replace('{id}', $packageId, self::URL_GET_PACKAGE_INFO));
+		} catch (RequestException $e){
+			$result = array();
+			$result['state'] = 'error';
+			$result['state_info'] = $e->getMessage();
+		}
+		
+		return $result;	
+	}
 }
 
 class PbhException extends \Exception{}
