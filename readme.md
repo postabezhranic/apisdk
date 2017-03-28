@@ -67,3 +67,12 @@ $result = $pbh->sendItems();
 ```
 
 V ***$result*** obdržíme odpověď ve formě pole. V případě, že nastane chyba, tak v odpovědi obdržíte bližší informace o chybě. Více informací se dozvíte v naší interní dokumetaci.
+
+Získání informací o zásilce
+------------
+Stačí zavolat metodu getPackageInfo a předat jí kód žásilky
+
+```php
+$result = $pbh->getPackageInfo('2-545'); //kod viz example-send-packages
+var_dump($result); //výsledek dotazu, pokud je vše dobře, vrátí se state ok
+```
