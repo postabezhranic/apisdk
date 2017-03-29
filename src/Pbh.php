@@ -16,8 +16,8 @@ class Pbh {
 	const URL_SEND_PACKAGES = 'https://www.postabezhranic.cz/api/send-packages';
 	//const URL_SEND_PACKAGES = 'localhost/pbh/api/send-packages'; //testovací
 	
-	//const URL_GET_PACKAGE_INFO = 'https://www.postabezhranic.cz/api/get-package-info?id={id}';
-	const URL_GET_PACKAGE_INFO = 'localhost/pbh/api/get-package-info?id={id}'; //testovací
+	const URL_GET_PACKAGE_INFO = 'https://www.postabezhranic.cz/api/get-package-info?id={id}';
+	//const URL_GET_PACKAGE_INFO = 'localhost/pbh/api/get-package-info?id={id}'; //testovací
 	
 	/**
 	 * 
