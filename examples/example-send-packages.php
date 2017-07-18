@@ -10,6 +10,9 @@ require __DIR__ . '/../src/XmlBuilder.php';
 
 $pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
 
+//pokud chceme, aby se při chybě nenahrály žádné zásilky, můžeme použít metodu
+$pbh->useTransactionMode(); 
+
 // příklad správného balíku
 $pbh->addItem([
     'kod' => '2-545',

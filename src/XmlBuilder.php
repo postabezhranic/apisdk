@@ -27,9 +27,13 @@ class XmlBuilder {
 	 * @param array $items
 	 * @return string - xml
 	 */
-	public function build($items){
+	public function build($items, $useInTransaction){
 		if($this->buildedXml){
 			return $this->buildedXml;
+		}
+		
+		if($useInTransaction){
+			$this->xmlContainer->appendChild($this->xml->createElement("zpracovat_transakcne", 1));
 		}
 		
 		foreach($items as $item){

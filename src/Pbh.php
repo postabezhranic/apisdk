@@ -10,6 +10,9 @@ class Pbh {
 	/** @var array */
 	private $items = array();
 	
+	/** @var bool */
+	private $useInTransaction = FALSE;
+	
 	/** @var Request */
 	private $request;
 	
@@ -22,7 +25,7 @@ class Pbh {
 	/**
 	 * 
 	 * @param int $login - id uživatele
-	 * @param string $apisdkKey - apikey (Pokud nemáte API klíč, můžete si ho vygenerovat v klientském účtu v sekci Nastavení.)
+	 * @param string $apiKey - apikey (Pokud nemáte API klíč, můžete si ho vygenerovat v klientském účtu v sekci Nastavení.)
 	 */
 	public function __construct($login, $apiKey) {
 		$this->request = new Request($login, $apiKey);
@@ -56,7 +59,7 @@ class Pbh {
 		$xmlBuilder = new XmlBuilder;
 		
 		try{
-			$result = $this->request->sendRequest(self::URL_SEND_PACKAGES, $xmlBuilder->build($this->items));
+			$result = $this->request->sendRequest(self::URL_SEND_PACKAGES, $xmlBuilder->build($this->items, $this->useInTransaction));
 		} catch (RequestException $e){
 			$result = array();
 			$result['state'] = 'error';
@@ -77,6 +80,11 @@ class Pbh {
 		}
 		
 		return $result;	
+	}
+	
+	
+	public function useTransactionMode(){
+		$this->useInTransaction = TRUE;
 	}
 }
 
