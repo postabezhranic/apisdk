@@ -24,10 +24,10 @@ $pbh->addItem([
     'jmeno' => 'Adresát',
     'produkty' => [
 	[
-	    'id' => '2-5454',
+	    'id' => '123456789',
 	    'mnozstvi' => '1',
 	],[
-	    'id' => '2-54',
+	    'id' => '12345678',
 	    'mnozstvi' => '1',
 	]
     ]

@@ -80,7 +80,7 @@ var_dump($result); //výsledek dotazu, pokud je vše dobře, vrátí se state ok
 Použití u fulfillmentu
 ------------
 
-přidání produktů a odeslání produktů na postabezhranic.cz
+Přidání produktů a odeslání produktů na postabezhranic.cz
 
 ```php
 $pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
@@ -105,7 +105,7 @@ $result = $pbh->sendProducts();
 var_dump($result);
 ```
 
-Odeslání zásilek s produkty potom vypadá, podobně, jako klasické odeslání balíku, jen se přidají produkty, které se mají odeslat.
+Odeslání zásilek s produkty potom vypadá podobně jako klasické odeslání balíku, jen se přidají produkty, které se mají odeslat.
 
 
 ```php
@@ -119,10 +119,10 @@ $pbh->addItem([
     'jmeno' => 'Adresát',
     'produkty' => [
 	[
-	    'id' => '2-5454',
+	    'id' => '123456789',
 	    'mnozstvi' => '1',
 	],[
-	    'id' => '2-54',
+	    'id' => '12345678',
 	    'mnozstvi' => '1',
 	]
     ]
