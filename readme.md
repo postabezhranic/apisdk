@@ -76,3 +76,52 @@ Stačí zavolat metodu getPackageInfo a předat jí kód žásilky
 $result = $pbh->getPackageInfo('2-545'); //kod viz example-send-packages
 var_dump($result); //výsledek dotazu, pokud je vše dobře, vrátí se state ok
 ```
+
+Použití u fulfillmentu
+------------
+
+přidání produktů a odeslání produktů na postabezhranic.cz
+$pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
+
+
+$pbh->useTransactionMode(); 
+
+$pbh->addProduct([
+    'kod_produktu' => '1-545',
+    'nazev' => 'test',
+    'foto' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
+]);
+
+$pbh->addProduct([
+    'kod_produktu' => '1-5454',
+    'nazev' => 'test2',
+    'foto' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
+]);
+
+
+$result = $pbh->sendProducts(); 
+var_dump($result);
+
+
+Odeslání zásilek s produkty potom vypadá, podobně, jako klasické odeslání balíku, jen se přidají produkty, které se mají odeslat.
+
+
+```php
+$pbh->addItem([
+    'kod' => '2-545',
+    'psc' => '110 00',
+    'ulice' => '17. listopadu',
+    'mesto' => 'Praha 5', 
+    'stat' => 'RO',
+    'prepravce' => 23,
+    'jmeno' => 'Adresát',
+    'produkty' => [
+	[
+	    'id' => '2-5454',
+	    'mnozstvi' => '1',
+	],[
+	    'id' => '2-54',
+	    'mnozstvi' => '1',
+	]
+    ]
+]);
