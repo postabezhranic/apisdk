@@ -103,7 +103,7 @@ $pbh->addProduct([
 
 $result = $pbh->sendProducts(); 
 var_dump($result);
-
+```
 
 Odeslání zásilek s produkty potom vypadá, podobně, jako klasické odeslání balíku, jen se přidají produkty, které se mají odeslat.
 
@@ -127,3 +127,4 @@ $pbh->addItem([
 	]
     ]
 ]);
+```
