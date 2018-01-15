@@ -81,6 +81,8 @@ Použití u fulfillmentu
 ------------
 
 přidání produktů a odeslání produktů na postabezhranic.cz
+
+```php
 $pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
 
 
