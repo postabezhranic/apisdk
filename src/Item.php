@@ -68,6 +68,9 @@ class Item
 	/** @var string|bool */
 	private $stat_banky;
 	
+	/** @var array|bool */
+	private $produkty;
+	
 	
 	public function __construct($itemData){
 		$this->kod = $itemData['kod'];
@@ -90,6 +93,7 @@ class Item
 		$this->cislo_bankovniho_uctu = isset($itemData['cislo_bankovniho_uctu']) ? $itemData['cislo_bankovniho_uctu'] : FALSE;
 		$this->kod_banky = isset($itemData['kod_banky']) ? $itemData['kod_banky'] : FALSE;
 		$this->stat_banky = isset($itemData['stat_banky']) ? $itemData['stat_banky'] : FALSE;
+		$this->produkty = isset($itemData['produkty']) ? $itemData['produkty'] : FALSE;
 	}
 		
 	public function getKod(){
