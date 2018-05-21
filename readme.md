@@ -36,14 +36,33 @@ Jaké klíče použít zjistíte ve třídě Item nebo pomocí naší interní d
 Interní dokumentaci obdržíte na žádost emailem po vytvoření klientského účtu. V dokumentaci se také dozvíte jaké přepravce volit, atd.
 
 ```php
+
+// příklad správného balíku
+$pbh->addItem([
+    'kod' => '2-546',
+    'psc' => '110 00',
+    'ulice' => '17. listopadu',
+    'mesto' => 'Praha 5', 
+    'stat' => 'HU',
+    'prepravce' => 60,
+    'jmeno' => 'Adresát',
+]);
+
+// příklad správného balíku se službami
 $pbh->addItem([
     'kod' => '2-545',
     'psc' => '110 00',
     'ulice' => '17. listopadu',
     'mesto' => 'Praha 5', 
-    'stat' => 'RO',
-    'prepravce' => 23,
-    'jmeno' => 'Adresát'
+    'stat' => 'HU',
+    'prepravce' => 60,
+    'jmeno' => 'Adresát',
+    'sluzby' => [
+	'sluzba' => [
+	    'nazev' => 'PP',
+	    'hodnota' => '1',
+	]
+    ]
 ]);
 
 //starší zápis

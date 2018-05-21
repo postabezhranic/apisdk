@@ -84,4 +84,15 @@ class XmlBuilder {
 		}
 	}
 	
+	
+	private function buildSluzby($data, &$element){
+		foreach($data as $product){
+			$productElement = $element->appendChild($this->xml->createElement('sluzba'));
+			foreach($product as $key => $val){
+				$productVal = $productElement->appendChild($this->xml->createElement($key));
+				$productVal->appendChild($this->xml->createCDATASection($val));
 			}
+		}
+	}
+	
+}

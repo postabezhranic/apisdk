@@ -1,5 +1,8 @@
 <?php
 
+error_reporting(E_ALL);
+ini_set('display_errors', 1);
+
 use postabezhranic\Apisdk\Pbh; //zadání namespace Pbh
 
 //pokud nepoužíváte composer je potřeba takto nalinkovat závislosti
@@ -15,13 +18,30 @@ $pbh->useTransactionMode();
 
 // příklad správného balíku
 $pbh->addItem([
+    'kod' => '2-546',
+    'psc' => '110 00',
+    'ulice' => '17. listopadu',
+    'mesto' => 'Praha 5', 
+    'stat' => 'HU',
+    'prepravce' => 60,
+    'jmeno' => 'Adresát',
+]);
+
+// příklad správného balíku se službami
+$pbh->addItem([
     'kod' => '2-545',
     'psc' => '110 00',
     'ulice' => '17. listopadu',
     'mesto' => 'Praha 5', 
-    'stat' => 'RO',
-    'prepravce' => 23,
-    'jmeno' => 'Adresát'
+    'stat' => 'HU',
+    'prepravce' => 60,
+    'jmeno' => 'Adresát',
+    'sluzby' => [
+	'sluzba' => [
+	    'nazev' => 'PP',
+	    'hodnota' => '1',
+	]
+    ]
 ]);
 
 // příklad špatného balíku - nebyly vyplněny všechny údaje

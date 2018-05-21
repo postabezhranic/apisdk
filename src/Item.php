@@ -44,6 +44,9 @@ class Item
 	/** @var string|bool */
 	private $prepravce;
 	
+	/** @var array|bool */
+	private $sluzby;
+	
 	/** @var string|bool */
 	private $ro_county;
 	
@@ -68,9 +71,6 @@ class Item
 	/** @var string|bool */
 	private $stat_banky;
 	
-	/** @var array|bool */
-	private $produkty;
-	
 	
 	public function __construct($itemData){
 		$this->kod = $itemData['kod'];
@@ -85,6 +85,7 @@ class Item
 		$this->vs = isset($itemData['vs']) ? $itemData['vs'] : FALSE;
 		$this->telefon = isset($itemData['telefon']) ? $itemData['telefon'] : FALSE;
 		$this->prepravce = isset($itemData['prepravce']) ? $itemData['prepravce'] : FALSE;
+		$this->sluzby = isset($itemData['sluzby']) ? $itemData['sluzby'] : FALSE;
 		$this->ro_county = isset($itemData['ro_county']) ? $itemData['ro_county'] : FALSE;
 		$this->nazev_odesilatele = isset($itemData['nazev_odesilatele']) ? $itemData['nazev_odesilatele'] : FALSE;
 		$this->stat = isset($itemData['stat']) ? $itemData['stat'] : FALSE;
@@ -93,7 +94,6 @@ class Item
 		$this->cislo_bankovniho_uctu = isset($itemData['cislo_bankovniho_uctu']) ? $itemData['cislo_bankovniho_uctu'] : FALSE;
 		$this->kod_banky = isset($itemData['kod_banky']) ? $itemData['kod_banky'] : FALSE;
 		$this->stat_banky = isset($itemData['stat_banky']) ? $itemData['stat_banky'] : FALSE;
-		$this->produkty = isset($itemData['produkty']) ? $itemData['produkty'] : FALSE;
 	}
 		
 	public function getKod(){
@@ -182,6 +182,14 @@ class Item
 
 	public function setPrepravce($prepravce){
 		$this->prepravce = $prepravce;
+	}
+
+	public function getSluzby(){
+		return $this->sluzby;
+	}
+
+	public function setSluzby($sluzby){
+		$this->sluzby = $sluzby;
 	}
 
 	public function getRo_county(){
