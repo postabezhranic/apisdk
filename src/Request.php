@@ -46,7 +46,7 @@ class Request
 		}
 
 		curl_close($ch);
-		var_dump($response);
+
 		return $this->decodeXml($response);
 	}
 	
