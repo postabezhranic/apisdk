@@ -51,8 +51,27 @@ class Request
 	}
 	
 	
-	private function decodeXml($response){
-		return json_decode(json_encode((array) simplexml_load_string($response)), 1);
+	private function decodeXml($response)
+    {
+        libxml_use_internal_errors(true);
+        $result = json_decode(json_encode((array)simplexml_load_string($response)), 1);
+
+        $errors = '';
+
+        foreach (libxml_get_errors() as $error) {
+            //$errors = $error->message;
+            $errors = 'Nastala neočekávaná chyba na straně serveru. Opakujte požadavek později. Pokud chyba přetvává, kontaktujte nás.';
+        }
+
+        libxml_clear_errors();
+
+        if ($errors) {
+            $result = array();
+            $result['state'] = 'error';
+            $result['state_info'] = $errors;
+        }
+
+        return $result;
 	}
 }
 
