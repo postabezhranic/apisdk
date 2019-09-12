@@ -59,6 +59,9 @@ $pbh->addItem([
     'jmeno' => 'Adresát',
     'sluzby' => [
 	'sluzba' => [
+	    '@attributy' => [
+	        'key' => 'val', //vygeneruje <sluzba key="val">
+	    ]
 	    'nazev' => 'PP',
 	    'hodnota' => '1',
 	]
