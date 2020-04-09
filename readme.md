@@ -111,15 +111,15 @@ $pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api k
 $pbh->useTransactionMode(); 
 
 $pbh->addProduct([
-    'kod_produktu' => '1-545',
-    'nazev' => 'test',
-    'foto' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
+    'productcode' => '1-545',
+    'name' => 'test',
+    'photo' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
 ]);
 
 $pbh->addProduct([
-    'kod_produktu' => '1-5454',
-    'nazev' => 'test2',
-    'foto' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
+    'productcode' => '1-5454',
+    'name' => 'test2',
+    'photo' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
 ]);
 
 
