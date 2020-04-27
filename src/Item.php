@@ -73,7 +73,10 @@ class Item
 	
 	/** @var array|bool */
 	private $produkty;
-	
+
+	/** @var string */
+	private $id_lokality;
+
 	public function __construct($itemData){
 		$this->kod = $itemData['kod'];
 		$this->spolecnost = isset($itemData['spolecnost']) ? $itemData['spolecnost'] : FALSE;
@@ -97,6 +100,7 @@ class Item
 		$this->kod_banky = isset($itemData['kod_banky']) ? $itemData['kod_banky'] : FALSE;
 		$this->stat_banky = isset($itemData['stat_banky']) ? $itemData['stat_banky'] : FALSE;
 		$this->produkty = isset($itemData['produkty']) ? $itemData['produkty'] : FALSE;
+		$this->id_lokality = isset($itemData['id_lokality']) ? $itemData['id_lokality'] : FALSE;
 	}
 		
 	public function getKod(){
@@ -259,6 +263,16 @@ class Item
 		$this->stat_banky = $stat_banky;
 	}
 
+	public function getIdLokality()
+	{
+		return $this->id_lokality;
+	}
+
+	public function setIdLokality($id_lokality)
+	{
+		$this->id_lokality = $id_lokality;
+	}
+
 	/**
 	 * @return array()
 	 */
@@ -274,7 +288,4 @@ class Item
 		
 		return $array;
 	}
-
-
-
 }
