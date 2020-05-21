@@ -13,13 +13,17 @@ class Product
 	
 	/** @var string @required */
 	private $productcode;
+
+	/** @var string|bool; */
+	private $productcodeOther;
 	
 	/** @var string|bool link to product photo*/
 	private $photo;
-	
+
 	public function __construct($data){
 		$this->name = $data['name'];
 		$this->productcode = $data['productcode'];
+		$this->productcodeOther = $data['productcodeOther'] ?: FALSE;
 		$this->photo = isset($data['photo']) ? $data['photo'] : FALSE;
 	}
 	
