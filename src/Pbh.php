@@ -61,15 +61,15 @@ class Pbh {
 			throw new PbhException('Položka musí být ve formátu pole.');
 		}
 		
-		if(!isset($productData['kod_produktu'])){
+		if(!isset($productData['productcode'])){
 			throw new PbhException('Položka neobsahuje povinný parametr "kod_produktu"');
 		}
 		
-		if(!isset($productData['nazev'])){
+		if(!isset($productData['name'])){
 			throw new PbhException('Položka neobsahuje povinný parametr "nazev"');
 		}
 		
-		$this->products[$productData['kod_produktu']] = new Product($productData);
+		$this->products[$productData['productcode']] = new Product($productData);
 	}
 	
 	

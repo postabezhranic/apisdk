@@ -8,19 +8,19 @@ namespace Postabezhranic\Apisdk;
  */
 class Product
 {	
-	/** @var string @required*/
-	private $nazev;
+	/** @var string @required */
+	private $name;
 	
-	/** @var string @required nazev*/
-	private $kod_produktu;
+	/** @var string @required */
+	private $productcode;
 	
-	/** @var string|bool odkaz na fotografii produktu*/
-	private $foto;
+	/** @var string|bool link to product photo*/
+	private $photo;
 	
 	public function __construct($data){
-		$this->nazev = $data['nazev'];
-		$this->kod_produktu = $data['kod_produktu'];
-		$this->foto = isset($data['foto']) ? $data['foto'] : FALSE;
+		$this->name = $data['name'];
+		$this->productcode = $data['productcode'];
+		$this->photo = isset($data['photo']) ? $data['photo'] : FALSE;
 	}
 	
 	/**
