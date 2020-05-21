@@ -58,15 +58,15 @@ class Pbh {
 	 */
 	public function addProduct($productData){
 		if(!is_array($productData)){
-			throw new PbhException('Položka musí být ve formátu pole.');
+			throw new PbhException('"$productData" must be array.');
 		}
 		
 		if(!isset($productData['productcode'])){
-			throw new PbhException('Položka neobsahuje povinný parametr "kod_produktu"');
+			throw new PbhException('Item does not contains "productcode"');
 		}
 		
 		if(!isset($productData['name'])){
-			throw new PbhException('Položka neobsahuje povinný parametr "nazev"');
+			throw new PbhException('Item does not contains "name"');
 		}
 		
 		$this->products[$productData['productcode']] = new Product($productData);
