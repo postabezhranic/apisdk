@@ -118,6 +118,7 @@ $pbh->addProduct([
 
 $pbh->addProduct([
     'productcode' => '1-5454',
+    'productcodeOther' => 'some-code',
     'name' => 'test2',
     'photo' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
 ]);
