@@ -23,7 +23,7 @@ class Product
 	public function __construct($data){
 		$this->name = $data['name'];
 		$this->productcode = $data['productcode'];
-		$this->productcodeOther = $data['productcodeOther'] ?: FALSE;
+		$this->productcodeOther = isset($data['productcodeOther']) ? $data['productcodeOther'] : FALSE;
 		$this->photo = isset($data['photo']) ? $data['photo'] : FALSE;
 	}
 	
