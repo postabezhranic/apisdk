@@ -2,14 +2,11 @@
     "name": "postabezhranic/apisdk",
     "description": "api sdk for postabezhranic",
     "type": "library",
+    "license": ["BSD-3-Clause", "GPL-2.0-only", "GPL-3.0-only"],
     "authors": [
         {
             "name": "Frogman s.r.o.",
             "email": "info@postabezhranic.cz"
-        },
-        {
-            "name": "Jan Matoušek",
-            "email": "matousek.vr@gmail.com"
         }
     ],
     "require": {
