@@ -77,6 +77,9 @@ class Item
 	/** @var string */
 	private $id_lokality;
 
+	/** @var string */
+	private $prepravce_upresneni;
+
 	public function __construct($itemData){
 		$this->kod = $itemData['kod'];
 		$this->spolecnost = isset($itemData['spolecnost']) ? $itemData['spolecnost'] : FALSE;
@@ -101,6 +104,7 @@ class Item
 		$this->stat_banky = isset($itemData['stat_banky']) ? $itemData['stat_banky'] : FALSE;
 		$this->produkty = isset($itemData['produkty']) ? $itemData['produkty'] : FALSE;
 		$this->id_lokality = isset($itemData['id_lokality']) ? $itemData['id_lokality'] : FALSE;
+		$this->prepravce_upresneni = isset($itemData['prepravce_upresneni']) ? $itemData['prepravce_upresneni'] : FALSE;
 	}
 		
 	public function getKod(){
@@ -271,6 +275,22 @@ class Item
 	public function setIdLokality($id_lokality)
 	{
 		$this->id_lokality = $id_lokality;
+	}
+
+	/**
+	 * @return string
+	 */
+	public function getPrepravceUpresneni()
+	{
+		return $this->prepravce_upresneni;
+	}
+
+	/**
+	 * @param string $prepravce_upresneni
+	 */
+	public function setPrepravceUpresneni($prepravce_upresneni)
+	{
+		$this->prepravce_upresneni = $prepravce_upresneni;
 	}
 
 	/**
