@@ -12,6 +12,9 @@ class Pbh {
 	
 	/** @var array  - array of products for fulfillment */
 	private $products = array();
+
+	/** @var array  - array of products for fulfillment */
+	private $productsForUpdate = array();
 	
 	/** @var bool */
 	private $useInTransaction = FALSE;
@@ -22,7 +25,8 @@ class Pbh {
 	const URL_SEND_PACKAGES = 'https://www.postabezhranic.cz/api/send-packages';
 	const URL_GET_PACKAGE_INFO = 'https://www.postabezhranic.cz/api/get-package-info?id={id}';
 	const URL_ADD_PRODUCTS = 'https://www.postabezhranic.cz/api/add-products';
-	
+	const URL_UPDATE_PRODUCTS = 'https://www.postabezhranic.cz/api/update-products';
+
 	/**
 	 * 
 	 * @param int $login - id uživatele
@@ -71,7 +75,29 @@ class Pbh {
 		
 		$this->products[$productData['productcode']] = new Product($productData);
 	}
-	
+
+
+	/**
+	 * Přidání produktu pro fulfillment
+	 * @param array $productData
+	 * @throws PbhException
+	 */
+	public function updateProduct($productData){
+		if(!is_array($productData)){
+			throw new PbhException('"$productData" must be array.');
+		}
+
+		if(!isset($productData['productcode'])){
+			throw new PbhException('Item does not contains "productcode"');
+		}
+
+		if(!isset($productData['name'])){
+			throw new PbhException('Item does not contains "name"');
+		}
+
+		$this->productsForUpdate[$productData['productcode']] = new Product($productData);
+	}
+
 	
 	/**
 	 * Odeslání všech přidaných balíků
@@ -109,6 +135,26 @@ class Pbh {
 			$result['state_info'] = $e->getMessage();
 		}
 		
+		return $result;
+	}
+
+
+	/**
+	 * Odeslání všech přidaných produktů do fulfillmentu
+	 *
+	 * @return array
+	 */
+	public function sendProductsForUpdate(){
+		$xmlBuilder = new XmlBuilder(XmlBuilder::TYPE_PRODUCT);
+
+		try{
+			$result = $this->request->sendRequest(self::URL_UPDATE_PRODUCTS, $xmlBuilder->build($this->productsForUpdate, $this->useInTransaction));
+		} catch (RequestException $e){
+			$result = array();
+			$result['state'] = 'error';
+			$result['state_info'] = $e->getMessage();
+		}
+
 		return $result;
 	}
 	

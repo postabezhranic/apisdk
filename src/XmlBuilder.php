@@ -28,8 +28,8 @@ class XmlBuilder {
 		$xml->formatOutput = true;
 		
 		if($type == self::TYPE_PRODUCT){
-			$this->mainWrapper = 'produkty';
-			$this->wrapper = 'produkt';
+			$this->mainWrapper = 'products';
+			$this->wrapper = 'product';
 		}
 		
 		
