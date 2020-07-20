@@ -11,22 +11,21 @@ require __DIR__ . '/../src/XmlBuilder.php';
 $pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
 
 //pokud chceme, aby se při chybě nenahrály žádné zásilky, můžeme použít metodu
-$pbh->useTransactionMode();
+$pbh->useTransactionMode(); 
 
-// příklad přidání produktu
-$pbh->addProduct([
-	'productcode' => '1-545',
-	'name' => 'test',
-	'photo' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
+// příklad editace produktu
+$pbh->updateProduct([
+    'productcode' => '1-545',
+    'name' => 'test',
+    'photo' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
 ]);
 
-$pbh->addProduct([
-	'productcode' => '1-5454',
-	'name' => 'test2',
-	'photo' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
+$pbh->updateProduct([
+    'productcode' => '1-5454',
+    'name' => 'test2',
+    'photo' => 'https://www.postabezhranic.cz/styl/images/logo-posta-bez-hranic.png',
 ]);
 
 
-
-$result = $pbh->sendProducts(); //odešleme produkty na postabezhranic.cz
+$result = $pbh->sendProductsForUpdate(); //odešleme produkty na postabezhranic.cz
 var_dump($result);
