@@ -6,7 +6,7 @@ use postabezhranic\Apisdk\Pbh; //zadání namespace Pbh
 require __DIR__ . '/../src/Api3Bridge.php';
 require __DIR__ . '/../src/Request.php';
 
-$pbh = new \Postabezhranic\Apisdk\Api3Bridge('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
+$pbh = new \Postabezhranic\Apisdk\Api3Bridge();
 $result = $pbh->request('delete-fulfillment-order',  [
 	'apiKey' => '1111',
 	'userId' => 1,
