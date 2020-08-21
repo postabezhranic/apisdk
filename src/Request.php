@@ -49,6 +49,31 @@ class Request
 
 		return $this->decodeXml($response);
 	}
+
+	/**
+	 *
+	 * @param string $url
+	 * @param string $data xml
+	 */
+	public static function request($url, $data = ''){
+		$ch = curl_init($url);
+		curl_setopt($ch, CURLOPT_POST, 1);
+		curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+		curl_setopt($ch, CURLOPT_RETURNTRANSFER, TRUE);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, TRUE);
+		curl_setopt($ch, CURLOPT_SSL_VERIFYHOST, 2);
+		curl_setopt($ch, CURLOPT_CAINFO, __DIR__ . self::CERTIFICATE_PATH);
+		$response = curl_exec($ch);
+		$error = curl_error($ch);
+
+		if($error){
+			throw new RequestException($error);
+		}
+
+		curl_close($ch);
+
+		return $response;
+	}
 	
 	
 	private function decodeXml($response)
