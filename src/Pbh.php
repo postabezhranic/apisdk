@@ -29,11 +29,11 @@ class Pbh {
 
 	/**
 	 * 
-	 * @param int $login - id uživatele
+	 * @param int $userId - ID uživatele
 	 * @param string $apiKey - apikey (Pokud nemáte API klíč, můžete si ho vygenerovat v klientském účtu v sekci Nastavení.)
 	 */
-	public function __construct($login, $apiKey) {
-		$this->request = new Request($login, $apiKey);
+	public function __construct($userId, $apiKey) {
+		$this->request = new Request($userId, $apiKey);
 	}
 
 	
