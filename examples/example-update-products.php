@@ -8,7 +8,7 @@ require __DIR__ . '/../src/Pbh.php';
 require __DIR__ . '/../src/Product.php';
 require __DIR__ . '/../src/XmlBuilder.php';
 
-$pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
+$pbh = new Pbh('userId', 'apikey'); //zde zadáme ID uživatele a api klíč
 
 //pokud chceme, aby se při chybě nenahrály žádné zásilky, můžeme použít metodu
 $pbh->useTransactionMode(); 

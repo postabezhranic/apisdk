@@ -80,6 +80,18 @@ class Item
 	/** @var string */
 	private $prepravce_upresneni;
 
+    /** @var bool */
+    private $vytisknout_stitek_prepravce;
+
+    /** @var bool */
+    private $vytvorit_zpetny_stitek;
+
+    /** @var string */
+    private $referencni_kod;
+
+    /** @var bool */
+    private $vicekusova_zasilka;
+
 	public function __construct($itemData){
 		$this->kod = $itemData['kod'];
 		$this->spolecnost = isset($itemData['spolecnost']) ? $itemData['spolecnost'] : FALSE;
@@ -105,6 +117,11 @@ class Item
 		$this->produkty = isset($itemData['produkty']) ? $itemData['produkty'] : FALSE;
 		$this->id_lokality = isset($itemData['id_lokality']) ? $itemData['id_lokality'] : FALSE;
 		$this->prepravce_upresneni = isset($itemData['prepravce_upresneni']) ? $itemData['prepravce_upresneni'] : FALSE;
+        $this->vytisknout_stitek_prepravce = isset($itemData['vytisknout_stitek_prepravce']) ? $itemData['vytisknout_stitek_prepravce'] : FALSE;
+        $this->vytvorit_zpetny_stitek = isset($itemData['vytvorit_zpetny_stitek']) ? $itemData['vytvorit_zpetny_stitek'] : FALSE;
+        $this->referencni_kod = isset($itemData['referencni_kod']) ? $itemData['referencni_kod'] : FALSE;
+        $this->vicekusove_zasilky = isset($itemData['vicekusove_zasilky']) ? $itemData['vicekusove_zasilky'] : FALSE;
+        $this->vicekusova_zasilka = isset($itemData['vicekusova_zasilka']) ? $itemData['vicekusova_zasilka'] : FALSE;
 	}
 		
 	public function getKod(){

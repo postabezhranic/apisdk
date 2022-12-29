@@ -108,6 +108,24 @@ class XmlBuilder {
 		}
 	}
 
+    /**
+     * @param $data
+     * @param $element
+     */
+    private function buildVicekusove_zasilky($data, &$element){
+        foreach($data as $item){
+            $productElement = $element->appendChild($this->xml->createElement('zasilka'));
+            foreach($item as $key => $val){
+                if(strtolower($key) == self::ATTRIBUTES){
+                    $this->buildAttributes($productElement, $val);
+                }else{
+                    $productVal = $productElement->appendChild($this->xml->createElement($key));
+                    $productVal->appendChild($this->xml->createCDATASection($val));
+                }
+            }
+        }
+    }
+
 
 	/**
 	 * @param $productElement
