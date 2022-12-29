@@ -26,9 +26,9 @@ Kde ***$path*** je cesta ke knihovně.
 
 Použití
 ------------
-Použití je jednoduché. Nejprve je potřeba inicializovat třídu \postabezhranic\Apisdk\Pbh a předat ji ***username*** a ***apikey***
+Použití je jednoduché. Nejprve je potřeba inicializovat třídu \postabezhranic\Apisdk\Pbh a předat ji ***userId*** a ***apikey***
 ```php
-$pbh = new \postabezhranic\api\Pbh('username', 'apikey');
+$pbh = new \postabezhranic\api\Pbh('userId', 'apikey');
 ```
 
 Potom můžeme přidávat zásilky pomocí addItem. 
@@ -105,7 +105,7 @@ Použití u fulfillmentu
 Přidání produktů a odeslání produktů na postabezhranic.cz
 
 ```php
-$pbh = new Pbh('username', 'apikey'); //zde zadáme uživatelské jméno a api klíč
+$pbh = new Pbh('userId', 'apikey'); //zde zadáme ID uživatele a api klíč
 
 
 $pbh->useTransactionMode(); 
