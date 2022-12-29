@@ -20,6 +20,7 @@ class XmlBuilder {
 	
 	const TYPE_ITEM = 'item';
 	const TYPE_PRODUCT = 'product';
+	const TYPE_LABEL = 'label';
 
 	const ATTRIBUTES = '@attributy';
 
@@ -31,9 +32,13 @@ class XmlBuilder {
 			$this->mainWrapper = 'products';
 			$this->wrapper = 'product';
 		}
-		
-		
-		$this->xmlContainer = $container = $xml->appendChild($xml->createElement($this->mainWrapper));
+
+        if($type == self::TYPE_LABEL){
+            $this->wrapper = 'product';
+        }
+
+
+        $this->xmlContainer = $container = $xml->appendChild($xml->createElement($this->mainWrapper));
 	}
 	
 	/**
@@ -73,6 +78,23 @@ class XmlBuilder {
 
 		return $this->buildedXml;
 	}
+
+    /**
+     * @param string $wrapper
+     * @param array $items
+     * @return string - xml
+     */
+    public function buildSimple($wrapper, $items){
+        $xml = new DOMDocument('1.0', 'UTF-8');
+        $xmlContainer = $xml->appendChild($xml->createElement($wrapper));
+
+        foreach($items as $key => $value){
+            $element = $xmlContainer->appendChild($xml->createElement($key));
+            $element->appendChild($xml->createCDATASection($value));
+        }
+
+        return $xml->saveXML();
+    }
 
 
 	/**

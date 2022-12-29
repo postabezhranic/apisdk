@@ -26,6 +26,7 @@ class Pbh {
 	const URL_GET_PACKAGE_INFO = 'https://www.postabezhranic.cz/api/get-package-info?id={id}';
 	const URL_ADD_PRODUCTS = 'https://www.postabezhranic.cz/api/add-products';
 	const URL_UPDATE_PRODUCTS = 'https://www.postabezhranic.cz/api/update-products';
+	const URL_GET_RETURN_SHIPPING_LABEL = 'https://www.postabezhranic.cz/api/get-return-shipping-label';
 
 	/**
 	 * 
@@ -170,6 +171,29 @@ class Pbh {
 		
 		return $result;	
 	}
+
+    /**
+     * Získání zpětného štítku
+     * @param array $labelData
+     * @throws PbhException
+     */
+    public function getReturnShippingLabel($labelData){
+        if(!is_array($labelData)){
+            throw new PbhException('"$labelData" must be an array.');
+        }
+
+        $xmlBuilder = new XmlBuilder(XmlBuilder::TYPE_LABEL);
+
+        try{
+            $result = $this->request->sendRequest(self::URL_GET_RETURN_SHIPPING_LABEL, $xmlBuilder->buildSimple(XmlBuilder::TYPE_LABEL, $labelData));
+        } catch (RequestException $e){
+            $result = array();
+            $result['state'] = 'error';
+            $result['state_info'] = $e->getMessage();
+        }
+
+        return $result;
+    }
 	
 	
 	public function useTransactionMode(){
