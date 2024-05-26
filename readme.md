@@ -68,16 +68,6 @@ $pbh->addItem([
     ]
 ]);
 
-//starší zápis
-$pbh->addItem(array(
-    'kod' => '2-545',
-    'psc' => '110 00',
-    'ulice' => '17. listopadu',
-    'mesto' => 'Praha 5', 
-    'stat' => 'RO',
-    'prepravce' => 23,
-    'jmeno' => 'Adresát'
-));
 ```
 
 Zásilek je možné přidat až 2000
