@@ -9,14 +9,19 @@ require __DIR__ . '/../src/Request.php';
 //příklad zásilky AT - POST
 $pbh = new Pbh('userId', 'apikey'); //zde zadáme ID uživatele a api klíč
 $result = $pbh->getReturnShippingLabel([
-	'company' => 'Firma s.r.o.',
-	'name' => 'Charlie Brown',
-	'street' => 'Kellergasse 23',
-	'zip' => '4040',
-	'city' => 'Linz',
-	'phone' => '123456789',
-	'email' => 'test@domena.cz',
-	'courierNumber' => 11,
+    'senderCompany' => 'Firma s.r.o.',
+    'senderName' => 'Charlie Brown',
+    'senderStreet' => 'Kellergasse 23',
+    'senderZip' => '4040',
+    'senderCity' => 'Linz',
+    'senderPhone' => '123456789',
+    'senderEmail' => 'test@domena.cz',
+    'courierNumber' => 11,
+    'additionalData' => [
+        'width' => 100,
+        'height' => 10,
+        'length' => 10,
+    ],
 ]);
 
 var_dump($result);
