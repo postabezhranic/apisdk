@@ -85,17 +85,30 @@ class XmlBuilder {
      * @return string - xml
      */
     public function buildSimple($wrapper, $items){
-        $xml = new DOMDocument('1.0', 'UTF-8');
+
+        $xml = new \DOMDocument('1.0', 'UTF-8');
+
         $xmlContainer = $xml->appendChild($xml->createElement($wrapper));
 
-        foreach($items as $key => $value){
-            $element = $xmlContainer->appendChild($xml->createElement($key));
-            $element->appendChild($xml->createCDATASection($value));
-        }
+        $this->arrayToXml($items, $xml, $xmlContainer);
 
         return $xml->saveXML();
+
     }
 
+    private function arrayToXml($items, $xml, $xmlContainer)
+    {
+        foreach ($items as $key => $value) {
+            $element = $xmlContainer->appendChild($xml->createElement($key));
+            if (is_array($value)) {
+                $this->arrayToXml($value, $xml, $element);
+            } else {
+                $element->appendChild(
+                    $xml->createCDATASection((string)$value)
+                );
+            }
+        }
+    }
 
 	/**
 	 * @param $data
