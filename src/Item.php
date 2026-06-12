@@ -80,6 +80,12 @@ class Item
     /** @var bool */
     private $vicekusova_zasilka;
 
+    /** @var string|bool */
+    private $cp;
+
+    /** @var string|bool */
+    private $vicekusove_zasilky;
+
 	public function __construct($itemData){
 		$this->kod = $itemData['kod'];
 		$this->spolecnost = isset($itemData['spolecnost']) ? $itemData['spolecnost'] : FALSE;
