@@ -162,7 +162,7 @@ class Pbh {
 	
 	public function getPackageInfo($packageId){
 		try{
-			$result = $this->request->sendRequest(str_replace('{id}', $packageId, self::URL_GET_PACKAGE_INFO));
+			$result = $this->request->sendRequest(str_replace('{id}', rawurlencode((string)$packageId), self::URL_GET_PACKAGE_INFO));
 		} catch (RequestException $e){
 			$result = array();
 			$result['state'] = 'error';
