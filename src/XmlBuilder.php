@@ -119,7 +119,7 @@ class XmlBuilder {
 			$productElement = $element->appendChild($this->xml->createElement('produkt'));
 			foreach($product as $key => $val){
 				$productVal = $productElement->appendChild($this->xml->createElement($key));
-				$productVal->appendChild($this->xml->createCDATASection($val));
+				$productVal->appendChild($this->xml->createCDATASection($val ?? ''));
 			}
 		}
 	}
@@ -137,7 +137,7 @@ class XmlBuilder {
 					$this->buildAttributes($productElement, $val);
 				}else{
 					$productVal = $productElement->appendChild($this->xml->createElement($key));
-					$productVal->appendChild($this->xml->createCDATASection($val));
+					$productVal->appendChild($this->xml->createCDATASection($val ?? ''));
 				}
 			}
 		}
@@ -155,7 +155,7 @@ class XmlBuilder {
                     $this->buildAttributes($productElement, $val);
                 }else{
                     $productVal = $productElement->appendChild($this->xml->createElement($key));
-                    $productVal->appendChild($this->xml->createCDATASection($val));
+                    $productVal->appendChild($this->xml->createCDATASection($val ?? ''));
                 }
             }
         }
@@ -170,7 +170,7 @@ class XmlBuilder {
 	private function buildAttributes($productElement, $attributes){
 		foreach($attributes as $key => $value){
 			$attribute = $this->xml->createAttribute($key);
-			$attribute->value = $value;
+			$attribute->value = $value ?? '';
 			$productElement->appendChild($attribute);
 		}
 	}
